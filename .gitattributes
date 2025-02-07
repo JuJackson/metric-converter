@@ -1,2 +1,72 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+package com.mycompany.metric.converter;
+import java.util.Scanner;
+import java.text.DecimalFormat;
+/**
+ *
+ * @author yahbo
+ */
+public class MetricConverter {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        DecimalFormat form = new DecimalFormat("#.00");
+        int choice = 0;
+        int userNum = 0;
+        double calc = 0;
+        String rounded = form.format(calc);
+        int ft = 0;
+        int mile = 0;
+        int in = 0;
+        int yards = 0;
+        while (choice < 1 || choice > 5){
+            System.out.println("Welcome to metric converter");
+            System.out.println("Which unit would you like to convert");
+            System.out.println("1. Meters ---> Feet");
+            System.out.println("2. Centimeters ---> Inches");
+            System.out.println("3. Kilometers ---> Miles");
+            System.out.println("4. Meters --> Yards");
+            System.out.println("5. Quit");
+            choice = scan.nextInt();
+            if (choice == 1){
+                System.out.println("Enter number of meters");
+                userNum = scan.nextInt();
+                calc = userNum*3.28;
+                rounded = form.format(calc);
+                System.out.println(userNum +" meters is "+rounded+" feet");
+                choice = 0;
+                
+            }
+            if (choice == 2){
+                System.out.println("Enter number of centimeters");
+                userNum = scan.nextInt();
+                calc = userNum/2.54;
+                rounded = form.format(calc);
+                System.out.println(userNum +" centimeters is "+rounded+" inches");
+                choice = 0;
+                
+            }
+            if (choice == 3){
+                System.out.println("Enter number of kilometers");
+                userNum = scan.nextInt();
+                calc = userNum/1.61;
+                rounded = form.format(calc);
+                System.out.println(userNum +" kilometers is "+rounded+" miles");
+                choice = 0;
+                
+            }
+            if (choice == 4){
+                System.out.println("Enter number of meters");
+                userNum = scan.nextInt();
+                calc = userNum*1.1;
+                rounded = form.format(calc);
+                System.out.println(userNum +" Meters is "+rounded+" yards");
+                choice = 0;
+                
+            }
+            
+            
+        }
+        System.out.println("Thanks for using my code have a good day");
+        
+    }
+}
